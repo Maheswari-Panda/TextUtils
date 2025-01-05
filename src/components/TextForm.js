@@ -26,9 +26,13 @@ export default function TextForm(props) {
 
   }
   const handleRemoveSpaceBtn=()=>{
-    setText(text.replaceAll(' ',''));
-    props.showAlert("Removed all spaces!","success");
-
+    if(text===''){
+      props.showAlert("Enter Text to remove spaces!","danger");
+    }
+    else{
+      setText(text.replaceAll(' ',''));
+      props.showAlert("Removed all spaces!","success");
+    }
   }
   const handleCapitalizeBtn=()=>{
     if(text===''){

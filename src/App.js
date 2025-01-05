@@ -3,13 +3,13 @@ import "./App.css";
 import Navbar from "./components/Navbar";
 import TextForm from "./components/TextForm";
 import Alert from "./components/Alert";
-import About from "./components/About";
+// import About from "./components/About";
 // import Avatar from "./components/Avatar";
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route
-} from "react-router-dom";
+// import {
+//   BrowserRouter as Router,
+//   Routes,
+//   Route
+// } from "react-router-dom";
 
 function App() {
   const [mode,setMode] = useState('light');
@@ -37,17 +37,18 @@ function App() {
 
   return (
     <>
-      <Router>
+      {/* <Router> */}
       <Navbar title="HiReact!" aboutText="Explore me :)" url="https://react.dev/" mode={mode} toggleMode={toggleMode}/>
       <Alert alert={alert}/>
       <div className="container my-3">
-        <Routes>
+      <TextForm heading="Enter text to analyze below" mode={mode} showAlert={showAlert}/>
+        {/* <Routes>
           <Route exact path="/" element={<TextForm heading="Enter text to analyze below" mode={mode} showAlert={showAlert}/>}></Route>
 
           <Route exact path="/about" element={<About/>}></Route>
-        </Routes>
+        </Routes> */}
       </div>
-      </Router>
+      {/* </Router> */}
     </>
   );
 }
